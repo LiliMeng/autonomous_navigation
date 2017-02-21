@@ -3,31 +3,35 @@
 data=load('data.txt')
 
 y1=mean(data(:,1));
-y11=mean(data(:,5));
+y11=mean(data(:,6));
 y2=mean(data(:,2));
-y22=mean(data(:,6))
+y22=mean(data(:,7))
 y3=mean(data(:,3));
-y33=mean(data(:,7));
+y33=mean(data(:,8));
 y4=mean(data(:,4));
-y44=mean(data(:,8))
+y44=mean(data(:,9));
+y5=mean(data(:,5));
+y55=mean(data(:,10));
 e1 = std(data(:,1));
-e11= std(data(:,5));
+e11= std(data(:,6));
 e2 = std(data(:,2));
-e22= std(data(:,6));
+e22= std(data(:,7));
 e3 = std(data(:,3));
-e33= std(data(:,7));
+e33= std(data(:,8));
 e4 = std(data(:,4));
-e44= std(data(:,8));
+e44= std(data(:,9));
+e5=std(data(:,5));
+e55=std(data(:,10));
 
-model_series = [y1, y11; y2, y22; y3, y33; y4, y44];
-model_error = [e1, e11; e2, e22; e3, e33; e4, e44];
+model_series = [y1, y11; y2, y22; y3, y33; y4, y44; y5, y55];
+model_error = [e1, e11; e2, e22; e3, e33; e4, e44; e5, e55];
 h = bar(model_series);
 set(h,'BarWidth',1);    % The bars will now touch each other
 set(gca,'YGrid','on')
 set(get(gca,'XLabel'),'String','Task')
 set(get(gca,'YLabel'),'String','Time (s)')
 lh = legend('RRT','Variant size RRT');
-set(gca, 'FontSize', 14);
+set(gca, 'FontSize', 13);
 %set(lh,'Location','BestOutside','Orientation','horizontal')
 hold on;
 numgroups = size(model_series, 1); 
