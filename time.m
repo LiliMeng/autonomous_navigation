@@ -1,3 +1,5 @@
+%Feb 20, 2017, Created by Lili
+%for plotting the data to compare our RRT and traditional RRT
 data=load('data.txt')
 
 y1=mean(data(:,1));
@@ -23,8 +25,8 @@ h = bar(model_series);
 set(h,'BarWidth',1);    % The bars will now touch each other
 set(gca,'YGrid','on')
 set(get(gca,'XLabel'),'String','Task')
-set(get(gca,'YLabel'),'String','Time (ms)')
-lh = legend('RRT','Our method');
+set(get(gca,'YLabel'),'String','Time (s)')
+lh = legend('RRT','Variant size RRT');
 set(gca, 'FontSize', 14);
 %set(lh,'Location','BestOutside','Orientation','horizontal')
 hold on;
